@@ -16,14 +16,14 @@ services:
   #      - "8888:8888"
 
   salonyours-ui:
-    image: 213.14.150.13:9000/salon/salonyours-ui:0.0.1-latest
+    image: 213.14.150.13:9000/salon/salonyours-ui:latest
     deploy:
       replicas: 1
     ports:
       - "8081:8081"
 
   salonyours-employee:
-    image: 213.14.150.13:9000/salon/salonyours-employee:0.0.1-latest
+    image: 213.14.150.13:9000/salon/salonyours-employee:latest
     deploy:
       replicas: 1
     ports:
