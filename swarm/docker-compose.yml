@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  #  tams-config-server:
+  #    build:
+  #      context: ./tams-config-server
+  #      args:
+  #        - PROJECT_ARTIFACT_ID=tams-config-server
+  #        - PROJECT_VERSION=0.0.1-SNAPSHOT
+  #      dockerfile: Dockerfile
+  #    restart: on-failure
+  #    image: tams-config-server:latest
+  #    deploy:
+  #      replicas: 1
+  #    ports:
+  #      - "8888:8888"
+
+  salonyours-ui:
+    image: 213.14.150.13:9000/salonyours-ui:latest
+    deploy:
+      replicas: 1
+    ports:
+      - "8081:8081"
+
+  salonyours-employee:
+    image: 213.14.150.13:9000/salonyours-employee:latest
+    deploy:
+      replicas: 1
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+
